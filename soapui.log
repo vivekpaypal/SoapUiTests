@@ -1,0 +1,13 @@
+2016-12-07 22:16:10,189 WARN  [SoapUI] Missing folder [/Users/vivek/Documents/marsWorkspace/soapuitests/ext] for external libraries
+2016-12-07 22:16:12,123 INFO  [DefaultSoapUICore] initialized soapui-settings from [/Users/vivek/soapui-settings.xml]
+2016-12-07 22:16:15,347 WARN  [SoapUIProGroovyScriptEngineFactory] Missing scripts folder [/Users/vivek/Documents/marsWorkspace/soapuitests/scripts]
+2016-12-07 22:16:23,732 INFO  [WsdlProject] Loaded project from [file:/Users/vivek/Documents/marsWorkspace/soapuitests/src/test/resources/StockTest-soapui-project.xml]
+2016-12-07 22:16:26,752 INFO  [SoapUIProTestCaseRunner] Running SoapUI tests in project [StockTest]
+2016-12-07 22:16:26,764 INFO  [SoapUIProTestCaseRunner] Running TestSuite [PositiveSite], runType = SEQUENTIAL
+2016-12-07 22:16:26,856 INFO  [SoapUIProTestCaseRunner] Running SoapUI testcase [Test1]
+2016-12-07 22:16:26,885 INFO  [SoapUIProTestCaseRunner] running step [Test]
+2016-12-07 22:16:41,500 INFO  [SoapUIProTestCaseRunner] Assertion [SOAP Response] has status VALID
+2016-12-07 22:16:41,520 INFO  [SoapUIProTestCaseRunner] Assertion [Not SOAP Fault] has status VALID
+2016-12-07 22:16:41,586 INFO  [SoapUIProTestCaseRunner] Finished running SoapUI testcase [Test1], time taken: 14500ms, status: FINISHED
+2016-12-07 22:16:41,592 INFO  [SoapUIProTestCaseRunner] TestSuite [PositiveSite] finished with status [FINISHED] in 14809ms
+2016-12-07 22:16:46,234 INFO  [SoapUIProTestCaseRunner] Created report at file:/Users/vivek/Documents/marsWorkspace/soapuitests/target/surefire-reports/index.html

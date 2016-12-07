@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="eb95a23e-6b2e-4345-903d-41b09d6a6764" activeEnvironment="Default" name="StockTest" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="753a4ccd-0ba7-4de0-a6d4-bf8996c48d58" wsaVersion="NONE" name="StockQuoteSoap" type="wsdl" bindingName="{http://www.webserviceX.NET/}StockQuoteSoap" soapVersion="1_1" anonymous="optional" definition="http://www.webservicex.net/stockquote.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://www.webservicex.net/stockquote.asmx</con:endpoint></con:endpoints><con:operation id="01b9f212-c888-4d95-8891-20193ea5bce7" isOneWay="false" action="http://www.webserviceX.NET/GetQuote" name="GetQuote" bindingOperationName="GetQuote" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e58f9931-cd20-494a-865f-5a053682c9ba" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/stockquote.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetQuote>
+         <!--Optional:-->
+         <web:symbol>INR</web:symbol>
+      </web:GetQuote>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/GetQuote"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="cd57f8a5-6073-4cf2-884b-049b819749d9" wsaVersion="NONE" name="StockQuoteSoap12" type="wsdl" bindingName="{http://www.webserviceX.NET/}StockQuoteSoap12" soapVersion="1_2" anonymous="optional" definition="http://www.webservicex.net/stockquote.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://www.webservicex.net/stockquote.asmx?WSDL"><con:part><con:url>http://www.webservicex.net/stockquote.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.webserviceX.NET/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webserviceX.NET/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET/">
+      <s:element name="GetQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="symbol" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuoteResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuote"/>
+  </wsdl:message>
+  <wsdl:message name="GetQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetQuoteHttpGetIn">
+    <wsdl:part name="symbol" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetQuoteHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetQuoteHttpPostIn">
+    <wsdl:part name="symbol" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetQuoteHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:portType name="StockQuoteSoap">
+    <wsdl:operation name="GetQuote">
+      <wsdl:documentation>Get Stock quote for a company Symbol</wsdl:documentation>
+      <wsdl:input message="tns:GetQuoteSoapIn"/>
+      <wsdl:output message="tns:GetQuoteSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="StockQuoteHttpGet">
+    <wsdl:operation name="GetQuote">
+      <wsdl:documentation>Get Stock quote for a company Symbol</wsdl:documentation>
+      <wsdl:input message="tns:GetQuoteHttpGetIn"/>
+      <wsdl:output message="tns:GetQuoteHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="StockQuoteHttpPost">
+    <wsdl:operation name="GetQuote">
+      <wsdl:documentation>Get Stock quote for a company Symbol</wsdl:documentation>
+      <wsdl:input message="tns:GetQuoteHttpPostIn"/>
+      <wsdl:output message="tns:GetQuoteHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StockQuoteSoap" type="tns:StockQuoteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetQuote">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetQuote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StockQuoteSoap12" type="tns:StockQuoteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetQuote">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetQuote" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StockQuoteHttpGet" type="tns:StockQuoteHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="GetQuote">
+      <http:operation location="/GetQuote"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StockQuoteHttpPost" type="tns:StockQuoteHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetQuote">
+      <http:operation location="/GetQuote"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StockQuote">
+    <wsdl:port name="StockQuoteSoap" binding="tns:StockQuoteSoap">
+      <soap:address location="http://www.webservicex.net/stockquote.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="StockQuoteSoap12" binding="tns:StockQuoteSoap12">
+      <soap12:address location="http://www.webservicex.net/stockquote.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="StockQuoteHttpGet" binding="tns:StockQuoteHttpGet">
+      <http:address location="http://www.webservicex.net/stockquote.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="StockQuoteHttpPost" binding="tns:StockQuoteHttpPost">
+      <http:address location="http://www.webservicex.net/stockquote.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.webservicex.net/stockquote.asmx</con:endpoint></con:endpoints><con:operation id="80d36534-8575-410e-9c60-4f4b2855fccf" isOneWay="false" action="http://www.webserviceX.NET/GetQuote" name="GetQuote" bindingOperationName="GetQuote" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="38ee3de5-7da8-468a-867d-6312d6cbf760" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/stockquote.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET/">
+   <soap:Header/>
+   <soap:Body>
+      <web:GetQuote>
+         <!--Optional:-->
+         <web:symbol>?</web:symbol>
+      </web:GetQuote>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/StockQuoteSoap/GetQuoteRequest"/></con:call></con:operation></con:interface><con:testSuite id="36574fff-737e-444f-8d5f-70c99132e2c1" name="PositiveSite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="936d1e5a-f586-4bc2-b1b7-2de8fb5e5519" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Test1" searchProperties="true"><con:settings/><con:testStep type="request" name="Test" id="f4c36e52-8983-4218-af01-53ac630e1566"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>StockQuoteSoap12</con:interface><con:operation>GetQuote</con:operation><con:request name="Test" id="56390f91-56c3-4742-b4d7-33a6b90f87ed"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/stockquote.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET/">
+   <soap:Header/>
+   <soap:Body>
+      <web:GetQuote/>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="78268d37-022b-4423-ac0f-aabc9f2e4fd4"/><con:assertion type="SOAP Fault Assertion" id="42bf4820-dc70-40ba-a87d-73421b690117"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
